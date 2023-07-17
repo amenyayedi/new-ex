@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }</style>
+      <script> function buttun() {
+       let a=document.getElementById("a").value;
+       let b=document.getElementById("b").value;
+       let c=document.getElementById("c").value;
+       let delta=b*b-4*a*c;
+       console.log("delta")
+       let text=""
+       if (delta>0) {
+    let x1=(-b.math.sqrt(delta))/(2*a);
+    let x2=(-b.math.sqrt(delta))/(2*a);
+    text="solution doubles : x1=x2="+x2;
+
+
+  }
+  else if (delta==0) {
+   alert="il n'a pas de solution" ;
+  }
+  document.getElementById("demo").innerHTML =text
+      </script>
+   
+   
+</head>
+<body>
+
+    <input type="text" id="a"> x <sup>2</sup> +
+    <input type="text" id="b"> x+
+    <input type="text" id="c"> =0 <br>
+    
+        <button class="button">resolve</button>
+</body>
+</html>
