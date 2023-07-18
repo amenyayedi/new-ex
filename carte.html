@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Jeu de cartes</title>
+</head>
+<body>
+  <div class="card" onclick="flipCard(this)">
+    <div class="front">
+      <img src="card-back.jpg">
+    </div>
+    <div class="back">
+      <img src="card-front.jpg">
+    </div>
+  </div>
+<style>
+    CSS (style.css) :
+
+css
+Copy code
+.card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(0deg);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+</style>
+  <script>function flipCard(card) {
+    card.classList.toggle("flipped");
+  }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
