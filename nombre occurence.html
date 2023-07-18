@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeu Nombre d'occurrences</title>
+  
+</head>
+<body>
+  <h1>Jeu Nombre d'occurrences </h1>
+  <div>
+    <label for="inputString">Entrez une chaîne de caractères :</label>
+    <input type="text" id="inputString">
+    <button onclick="countOccurrences()">Compter les occurrences</button>
+  </div>
+  <div id="results">
+    <p>Nombre total de caractères : <span id="charCount">-</span></p>
+    <p>Nombre d'occurrences du caractère : <span id="occurrenceCount">-</span></p>
+  </div>
+
+  <script>function countOccurrences() {
+    const inputString = document.getElementById("inputString").value;
+    const charToCount = document.getElementById("charToCount").value;
+    const charCount = inputString.length;
+    const occurrenceCount = countCharacterOccurrences(inputString, charToCount);
+  
+    document.getElementById("charCount").innerText = charCount;
+    document.getElementById("occurrenceCount").innerText = occurrenceCount;
+    document.getElementById("results").style.display = "block";
+  }
+  
+  function countCharacterOccurrences(inputString, charToCount) {
+    let count = 0;
+    for (let i = 0; i < inputString.length; i++) {
+      if (inputString.charAt(i) === charToCount) {
+        count++;
+      }
+    }
+    return count;
+  }</script>
+  <style>body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  div {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    margin-right: 10px;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  
+  #results {
+    display: none;
+    margin-top: 20px;
+  }</style>
+</body>
+</html>
+
+
+
+
+
+
+
